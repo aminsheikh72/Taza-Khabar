@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useContext } from 'react';
 import NewsContext from '../context/NewsContext'; // Make sure to import the context
+import WeatherContext from '../context/WeatheContext';
 
 const Form = () => {
     const [search, setSearch] = useState('');
-    const { dispatch,theme } = useContext(NewsContext); // Access dispatch from context
+    const { dispatch,theme } = useContext(NewsContext,WeatherContext); 
+ 
   
 
     const FetchApi = async (query = "india") => {
@@ -27,6 +29,8 @@ const Form = () => {
             console.error("Error fetching news:", error);
         }
     };
+
+    
 
     useEffect(() => {
         FetchApi();

@@ -3,11 +3,13 @@ import NewsContext from '../context/NewsContext'
 
 
 const Navbar = () => {
+
   const {theme, dispatch}= useContext(NewsContext)
+
 
   const toggleTheme=()=>{
     dispatch({type : "TOGGLE"})
-    
+    localStorage.setItem('theme', JSON.stringify(!theme))
   }
   
   return (

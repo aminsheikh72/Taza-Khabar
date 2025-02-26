@@ -1,19 +1,20 @@
 import React, { useContext } from 'react'
 import Navbar from './components/Navbar'
 
-import NewsContext, { NewsProvider } from './context/NewsContext';
+
 import MainPage from './components/MainPage'
+import { WeatherProvider } from './context/WeatheContext'
 
 const App = () => {
  
   return (
-    <NewsProvider>
+    <WeatherProvider>
 <Navbar/>
      
      <MainPage/>
 
       
-    </NewsProvider>
+    </WeatherProvider>
   )
 }
 

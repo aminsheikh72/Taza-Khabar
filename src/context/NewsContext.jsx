@@ -5,9 +5,10 @@ const NewsContext = createContext()
 
 export const NewsProvider=({children})=>{
 
+    const themeExist = JSON.parse(localStorage.getItem("theme"))
     const initialState = {
        news : [],
-       theme : true
+       theme : themeExist || null
     }
     const [state,dispatch]= useReducer(NewsReducer,initialState)
 
