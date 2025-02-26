@@ -7,7 +7,7 @@ export const NewsProvider=({children})=>{
 
     const initialState = {
        news : [],
-       
+       theme : true
     }
     const [state,dispatch]= useReducer(NewsReducer,initialState)
 

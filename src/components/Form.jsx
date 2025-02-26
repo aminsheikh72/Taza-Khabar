@@ -3,12 +3,12 @@ import NewsContext from '../context/NewsContext'; // Make sure to import the con
 
 const Form = () => {
     const [search, setSearch] = useState('');
-    const { dispatch } = useContext(NewsContext); // Access dispatch from context
-   const theme = true
+    const { dispatch,theme } = useContext(NewsContext); // Access dispatch from context
+  
 
-    const FetchApi = async (query = "sports") => {
+    const FetchApi = async (query = "india") => {
         try {
-            const res = await fetch(`https://gnews.io/api/v4/search?q=${query}&apikey=e88dd56338785b3feed1fbb4b1256e5d`);
+            const res = await fetch(`https://gnews.io/api/v4/search?q=${query}&apikey=5d1dcdc3ba3675eb24ae087403edbb99`);
             const data = await res.json();
 
             const newsArray = data.articles.map((article) => ({
@@ -47,7 +47,7 @@ const Form = () => {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder='SEARCH ANY NEWS'
-                className={theme ? 'focus:outline-none w-full md:w-[70%] py-3 px-3 focus:text-gray-300 placeholder:text-gray-200 border border-gray-200 rounded-md' : 'focus:outline-none w-full md:w-[70%] py-3 px-3 focus:text-gray-300 placeholder:text-gray-200 border border-black-200 rounded-md'}
+                className={theme ? 'focus:outline-none w-full md:w-[70%] py-3 px-3 focus:text-gray-300 placeholder:text-gray-200 border border-gray-200 rounded-md' : 'focus:outline-none w-full md:w-[70%] py-3 px-3 focus:text-gray-900 placeholder:text-gray-900 border border-black-200 rounded-md'}
             />
             <button 
                 type="submit"

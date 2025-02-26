@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import NewsContext from '../context/NewsContext';
 
 const NewsList = () => {
-    const { news } = useContext(NewsContext);  // ✅ Get news from context
-const theme = true
+    const { news,theme } = useContext(NewsContext);  // ✅ Get news from context
+
     return (
         <div>
             {news.length === 0 ? <p>No news found.</p> : (

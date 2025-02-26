@@ -7,6 +7,11 @@ export const NewsReducer=(state,action)=>{
                 ...state,
                news : action.payload
             }
+            case  "TOGGLE":
+                return{
+                    ...state,
+                    theme : !state.theme
+                }
 
 
 
